@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>EmperorOS — Installation Guide</title>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      background-color: #0e0e0e;
+      color: #e0e0e0;
+      font-family: 'JetBrains Mono', monospace;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px;
+    }
+
+    h1, h2 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      color: #f9d342;
+    }
+
+    p {
+      max-width: 700px;
+      text-align: center;
+      line-height: 1.6;
+    }
+
+    .steps {
+      margin-top: 40px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      max-width: 800px;
+      width: 100%;
+    }
+
+    .step {
+      background-color: #1a1a1a;
+      padding: 20px;
+      border-left: 4px solid #f9d342;
+      border-radius: 4px;
+    }
+
+    code {
+      background-color: #1e1e1e;
+      padding: 5px 10px;
+      font-size: 1rem;
+      color: #f9d342;
+      border-radius: 4px;
+    }
+
+    .cta {
+      margin-top: 50px;
+      text-align: center;
+    }
+
+    .cta a {
+      display: inline-block;
+      background-color: #f9d342;
+      color: #000;
+      padding: 12px 24px;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 4px;
+      transition: background-color 0.2s ease-in-out;
+    }
+
+    .cta a:hover {
+      background-color: #ffe66d;
+    }
+
+    @media(max-width: 768px) {
+      .steps {
+        grid-template-columns: 1fr;
+      }
+
+      h1, h2 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>EmperorOS Installation Guide</h1>
+  <p>Follow these simple steps to install EmperorOS and turn your Fedora system into a powerful, modular meta-distribution.</p>
+
+  <div class="steps">
+    <div class="step">
+      <h3>1. Clone the Repository</h3>
+      <p>First, you'll need to clone the official EmperorOS repository from GitHub:</p>
+      <pre><code>git clone https://github.com/EmperorOS/empinstall.git</code></pre>
+    </div>
+    <div class="step">
+      <h3>2. Navigate to the Directory</h3>
+      <p>Move into the cloned repository:</p>
+      <pre><code>cd empinstall</code></pre>
+    </div>
+  </div>
+
+  <div class="steps">
+    <div class="step">
+      <h3>3. Run the Installation Script</h3>
+      <p>Once inside the repository, you can run the installation script:</p>
+      <pre><code>./empinstall.sh</code></pre>
+      <p>This script will transform your existing Fedora system into an EmperorOS-powered system.</p>
+    </div>
+  </div>
+
+  <div class="cta">
+    <p>Once the installation is complete, you're ready to start using EmperorOS!</p>
+    <a href="index.html">Back to Home</a>
+  </div>
+</body>
+</html>
