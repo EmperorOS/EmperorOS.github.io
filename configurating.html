@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>EmperorOS Installation Guide</title>
+  <title>EmperorOS Configurating</title>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet">
   <style>
     body {
@@ -61,6 +61,7 @@
     .cta {
       margin-top: 50px;
       text-align: center;
+      justify-content: center;
     }
 
     .cta a {
@@ -78,72 +79,47 @@
       background-color: #ffe66d;
     }
 
+    a.disabled,
+    a[aria-disabled="true"] {
+      pointer-events: none; /* prevent clicks */
+      opacity: 0.5;         /* faded look */
+      cursor: default;      /* normal cursor */
+      background-color: #555;
+      color: #ccc;
+    }
+
     @media(max-width: 768px) {
       h1 {
         font-size: 2.2rem;
+      }
+      .cta {
+        flex-direction: column;
+        gap: 10px;
       }
     }
   </style>
 </head>
 <body>
   <img src="./assets/logo.png" width="120" alt="EmperorOS Logo">
-  <h1>EmperorOS Installation Guide</h1>
+  <h1>EmperorOS Configurating</h1>
 
-  <div class="warning">
-    ⚠️ WARNING: This is a manual installation guide. You are expected to know basic Linux commands. Improper use can break your system. Proceed at your own risk.
-  </div>
-
-  <h2>Step 1: Replacing <code>/etc/os-release</code></h2>
+  <h2>Step 1: Install <code>fastfetch</code></h2>
   <div class="note">
-    Make a backup of your current os-release file before replacing it.
+    A modern way to display system information.
   </div>
-  <pre><code># Backup old os-release
-sudo cp /etc/os-release /etc/os-release.bak
-
-# Replace with EmperorOS version
-sudo sh -c "curl -fsSL https://raw.githubusercontent.com/EmperorOS/EmperorOS/main/os-release > /etc/os-release"
+  <pre><code>sudo epkg add fastfetch
 </code></pre>
 
-  <h2>Step 2: Installing <code>epkg</code></h2>
+  <h2>Step 2: Install <code>oh-my-zsh</code></h2>
   <div class="note">
-    epkg is the EmperorOS package manager.
+    Unleash your terminal like never before.
   </div>
-  <pre><code># Clone the epkg repository
-git clone https://github.com/emperoros/epkg
-
-# Move the binary to system-wide location
-cd epkg
-sudo mv ./epkg /usr/bin/epkg
+  <pre><code>sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 </code></pre>
-
-  <h2>Step 3: Setting up the epkg repository</h2>
-  <div class="note">
-    The repository must be at <code>/opt/epkg-repo</code> for epkg to work.
-  </div>
-  <pre><code># Clone EmperorOS package repository
-sudo git clone https://github.com/emperoros/epkg-repo /opt/epkg-repo
-</code></pre>
-
-  <h2>Step 4: Reboot</h2>
-  <pre><code>sudo reboot
-</code></pre>
-
-  <h2>Step 5: Verify epkg</h2>
-  <pre><code># List installed packages
-epkg list
-</code></pre>
-
-  <h2>Additional Notes</h2>
-  <ul>
-    <li>Install packages using: <code>sudo epkg add PACKAGE_NAME</code></li>
-    <li>Always run epkg as root when installing system-wide.</li>
-    <li>The repository is local — you can edit <code>.emake</code> scripts for custom builds.</li>
-    <li>Update installed packages after repository changes: <code>sudo epkg update</code></li>
-  </ul>
 
   <div class="cta">
-    <a href="index.html">Prev</a>
-    <a href="configurating.html">Next</a>
+    <a href="installation.html">Prev</a>
+    <a aria-disabled="true" class="disabled">Next</a>
   </div>
 </body>
 </html>
