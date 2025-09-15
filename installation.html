@@ -104,7 +104,18 @@ sudo cp /etc/os-release /etc/os-release.bak
 sudo sh -c "curl -fsSL https://raw.githubusercontent.com/EmperorOS/EmperorOS/main/os-release > /etc/os-release"
 </code></pre>
 
-  <h2>Step 2: Installing <code>epkg</code></h2>
+  <h2>Step 2: Installing <code>emperorutils</code></h2>
+  <div class="note">
+   emperorutils is a list of utilities for EmperorOS.
+  </div>
+  <pre><code># Clone the emperorutils repository
+git clone https://github.com/emperoros/emperorutils
+
+# Install utilities
+sudo ./install.sh
+</code></pre>
+
+  <h2>Step 3: Installing <code>epkg</code></h2>
   <div class="note">
     epkg is the EmperorOS package manager.
   </div>
@@ -116,7 +127,8 @@ cd epkg
 sudo mv ./epkg /usr/bin/epkg
 </code></pre>
 
-  <h2>Step 3: Setting up the epkg repository</h2>
+  
+  <h2>Step 4: Setting up the epkg repository</h2>
   <div class="note">
     The repository must be at <code>/opt/epkg-repo</code> for epkg to work.
   </div>
@@ -124,11 +136,11 @@ sudo mv ./epkg /usr/bin/epkg
 sudo git clone https://github.com/emperoros/epkg-repo /opt/epkg-repo
 </code></pre>
 
-  <h2>Step 4: Reboot</h2>
+  <h2>Step 5: Reboot</h2>
   <pre><code>sudo reboot
 </code></pre>
 
-  <h2>Step 5: Verify epkg</h2>
+  <h2>Step 6: Verify epkg</h2>
   <pre><code># List installed packages
 epkg list
 </code></pre>
